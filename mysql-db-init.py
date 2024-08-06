@@ -88,7 +88,7 @@ def read_csv_and_insert_transactions_to_db(connection, cursor):
                 lineReadTuple = tuple(row[0].split(','))
                 if lineReadTuple[-1] == "":
                     lst = list(lineReadTuple)
-                    lst[-1] = None
+                    lst[-1] = "0001-01-01"
                     lineReadTuple = tuple(lst)
                 cursor.execute(sql_insert_query, lineReadTuple)
 
